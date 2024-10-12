@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bq60hfcuievol"]
+
+[ext_resource type="Texture2D" uid="uid://q7vlq06ewsys" path="res://modeli/stazaprava.png" id="1_qka31"]
+
+[node name="staza" type="Node2D"]
+
+[node name="Staza" type="Sprite2D" parent="."]
+texture = ExtResource("1_qka31")

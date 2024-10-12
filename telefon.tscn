@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://caj3uedkq7lcr"]
+
+[ext_resource type="Texture2D" uid="uid://dscjkhbckjoag" path="res://modeli/fontelegotovo.png" id="1_kv5ia"]
+[ext_resource type="PackedScene" uid="uid://dbhvr6rfp4um6" path="res://modeli/igrica.tscn" id="2_0jsre"]
+[ext_resource type="Texture2D" uid="uid://ccyh0nql0ofiu" path="res://modeli/naftna-industrija-srbije-nis-logo-7B388224A2-seeklogo.com.png" id="3_i2u1k"]
+[ext_resource type="Texture2D" uid="uid://nrs7agtfgrts" path="res://modeli/logo.png" id="4_avcxl"]
+
+[node name="telefon" type="Node2D"]
+
+[node name="Fontele" type="Sprite2D" parent="."]
+position = Vector2(964, 537)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_kv5ia")
+
+[node name="igrica" parent="." instance=ExtResource("2_0jsre")]
+position = Vector2(970, 550)
+scale = Vector2(0.4, 0.4)
+
+[node name="Naftna-industrija-srbije-nis-logo-7b388224a2-seeklogo_com" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(973, 560)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_i2u1k")
+
+[node name="Logo" type="Sprite2D" parent="."]
+position = Vector2(971, 546)
+scale = Vector2(0.262, 0.262)
+texture = ExtResource("4_avcxl")

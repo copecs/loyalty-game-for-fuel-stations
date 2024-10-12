@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://x860gfodt0ty"]
+
+[ext_resource type="Script" path="res://modeli/auto.gd" id="1_3dq15"]
+[ext_resource type="Texture2D" uid="uid://vjcx1wdl7h88" path="res://AUTO.png" id="1_6rlqx"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b6444"]
+radius = 562.0
+height = 1966.0
+
+[node name="auto" type="Node2D"]
+script = ExtResource("1_3dq15")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_6rlqx")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(8, 0)
+shape = SubResource("CapsuleShape2D_b6444")

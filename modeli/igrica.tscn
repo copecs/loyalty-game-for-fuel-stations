@@ -1,0 +1,110 @@
+[gd_scene load_steps=7 format=3 uid="uid://dbhvr6rfp4um6"]
+
+[ext_resource type="PackedScene" uid="uid://c0lme7741dq1h" path="res://modeli/level.tscn" id="1_igbu1"]
+[ext_resource type="Script" path="res://modeli/igrica.gd" id="1_uwpyl"]
+[ext_resource type="PackedScene" uid="uid://dqsys4duylgxj" path="res://modeli/coin.tscn" id="2_3q7wt"]
+[ext_resource type="FontFile" uid="uid://cvm13vgkfigmp" path="res://modeli/Game Changer Regular.ttf" id="4_swuqq"]
+[ext_resource type="PackedScene" uid="uid://bulfl5maraclf" path="res://modeli/stop.tscn" id="5_d07rn"]
+[ext_resource type="PackedScene" uid="uid://tic423l8hs1w" path="res://modeli/gdrive.tscn" id="6_une04"]
+
+[node name="igrica" type="Node2D"]
+script = ExtResource("1_uwpyl")
+
+[node name="level" parent="." instance=ExtResource("1_igbu1")]
+position = Vector2(2, 3)
+
+[node name="coin" parent="." instance=ExtResource("2_3q7wt")]
+position = Vector2(278, -275)
+scale = Vector2(0.5, 0.5)
+
+[node name="markeri" type="Node2D" parent="."]
+position = Vector2(-198, -332)
+
+[node name="Marker2D3" type="Marker2D" parent="markeri"]
+position = Vector2(-152, 165)
+
+[node name="Marker2D" type="Marker2D" parent="markeri"]
+
+[node name="Marker2D2" type="Marker2D" parent="markeri"]
+position = Vector2(-81, 66)
+
+[node name="Marker2D4" type="Marker2D" parent="markeri"]
+position = Vector2(-182, 275)
+
+[node name="Marker2D5" type="Marker2D" parent="markeri"]
+position = Vector2(-185, 390)
+
+[node name="Marker2D6" type="Marker2D" parent="markeri"]
+position = Vector2(111, -43)
+
+[node name="Marker2D7" type="Marker2D" parent="markeri"]
+position = Vector2(139, 715)
+
+[node name="Marker2D8" type="Marker2D" parent="markeri"]
+position = Vector2(-85, 600)
+
+[node name="Marker2D9" type="Marker2D" parent="markeri"]
+position = Vector2(13, 692)
+
+[node name="Marker2D10" type="Marker2D" parent="markeri"]
+position = Vector2(256, 724)
+
+[node name="Marker2D11" type="Marker2D" parent="markeri"]
+position = Vector2(349, 691)
+
+[node name="Marker2D12" type="Marker2D" parent="markeri"]
+position = Vector2(-146, 507)
+
+[node name="Marker2D13" type="Marker2D" parent="markeri"]
+position = Vector2(581, 446)
+
+[node name="Marker2D14" type="Marker2D" parent="markeri"]
+position = Vector2(533, 113)
+
+[node name="Marker2D15" type="Marker2D" parent="markeri"]
+position = Vector2(576, 238)
+
+[node name="Marker2D16" type="Marker2D" parent="markeri"]
+position = Vector2(528, 556)
+
+[node name="Marker2D17" type="Marker2D" parent="markeri"]
+position = Vector2(436, 645)
+
+[node name="Marker2D18" type="Marker2D" parent="markeri"]
+position = Vector2(219, -49)
+
+[node name="Marker2D19" type="Marker2D" parent="markeri"]
+position = Vector2(439, 37)
+
+[node name="Marker2D20" type="Marker2D" parent="markeri"]
+position = Vector2(347, -31)
+
+[node name="txt" type="RichTextLabel" parent="."]
+offset_left = -47.0
+offset_top = 503.0
+offset_right = 489.0
+offset_bottom = 940.0
+theme_override_fonts/normal_font = ExtResource("4_swuqq")
+theme_override_font_sizes/normal_font_size = 200
+
+[node name="stop" parent="." instance=ExtResource("5_d07rn")]
+position = Vector2(-3600, -2219)
+scale = Vector2(0.17, 0.17)
+
+[node name="slow" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="gdrive" parent="." instance=ExtResource("6_une04")]
+position = Vector2(-3717, -1969)
+scale = Vector2(0.2, 0.2)
+
+[node name="fast" type="Timer" parent="."]
+wait_time = 3.0
+
+[connection signal="increment_score" from="coin" to="." method="_on_coin_increment_score"]
+[connection signal="respawn" from="coin" to="." method="_on_coin_respawn"]
+[connection signal="slow_down" from="stop" to="." method="_on_stop_slow_down"]
+[connection signal="timeout" from="slow" to="." method="_on_slow_timeout"]
+[connection signal="fastup" from="gdrive" to="." method="_on_gdrive_fastup"]
+[connection signal="timeout" from="fast" to="." method="_on_fast_timeout"]
