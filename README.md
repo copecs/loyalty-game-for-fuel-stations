@@ -2,6 +2,9 @@
 
 This game was created for a hackathon in 2023 using the Godot engine. It is designed to support fuel stations' loyalty programs by providing an engaging experience where customers can play and collect loyalty rewards.
 
+![Game Screenshot](screenshot.png)
+
+
 ## Gameplay
 
 - **Single-click control**: Players change the direction of their cars with a single click on the screen.
@@ -29,10 +32,6 @@ This game was developed as part of a hackathon in 2023, showcasing how gamificat
 2. Avoid red triangle obstacles while collecting coins.
 3. Grab loyalty products and power-ups to enhance your gameplay and score.
 4. Keep playing to achieve a high score!
-
-## Screenshot
-
-![Game Screenshot](screenshot.png)
 
 ## Video Showcase
 
